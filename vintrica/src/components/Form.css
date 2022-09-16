@@ -1,0 +1,7 @@
+#hello{
+    background-image: url('../images/station.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    opacity: 0.5;
+}
