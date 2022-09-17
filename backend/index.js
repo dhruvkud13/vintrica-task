@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from 'cookie-parser';
 import detailsRoute from './routes/details.js';
+import registrationRoute from './routes/registration.js';
 import  cors  from "cors";
 
 const app= express();
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/details',detailsRoute);
+app.use('/api/registration',registrationRoute);
 
 //error handling middleware
 app.use((err,req,res,next)=>{

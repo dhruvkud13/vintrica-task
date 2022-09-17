@@ -8,36 +8,64 @@ import {FaMotorcycle} from 'react-icons/fa'
 import {AiFillCar} from 'react-icons/ai'
 import {BsTruck} from 'react-icons/bs'
 import { Select,Button,Input } from 'antd';
+import {useDispatch} from 'react-redux'
+import {detailsSuccess,detailsStart,detailsFailure} from '../redux/detailSlice'
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 // import './Form.css';
 const { Option } = Select;
 
 
 const Form = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const[country,setCountry]= useState('');
     const[vehicle,setVehicle]= useState('');
     const[duration,setDuration]= useState('');
     const[loading,setLoading]= useState(false);
-    console.log(country)
-    console.log(vehicle)
-    console.log(duration)
-    const handleSubmit=async(e)=>{
-        setLoading(true);
-        e.preventDefault();
-        try{
-            const body={country,vehicle,duration};
-            await fetch('http://localhost:8000/api/details',{
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify(body)
-            }).then((response)=>{
-                setLoading(false);
-            })
-        }catch(err){
-            console.log(err)
-            setLoading(false);
-        }
-    }
+    // console.log(country)
+    // console.log(vehicle)
+    // console.log(duration)
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      
+      try {
+        dispatch(detailsStart());
+        const res = await axios.post("http://localhost:8000/api/details", { country,vehicle, duration });
+        console.log(res.data+'yoooooo');
+        dispatch(detailsSuccess(res.data));
+        navigate('/continue')
+      } catch (err) {
+        dispatch(detailsFailure());
+      }
+    };
+    // const handleSubmit=async(e)=>{
+    //   dispatch(detailsStart())
+    //     setLoading(true);
+    //     e.preventDefault();
+    //     try{
+    //         const body={country,vehicle,duration};
+    //         await fetch('http://localhost:8000/api/details',{
+    //             method:"POST",
+    //             headers:{"Content-Type":"application/json"},
+    //             body:JSON.stringify(body)
+    //         }).then((response)=>{
+    //           dispatch(detailsSuccess(response))
+    //           console.log(response.json())
+    //             // setLoading(false);
+                
+    //         }).then((data) => {
+              
+    //           setLoading(false);
+    //           console.log(data);
+    //         });
+    //         navigate("/continue")
+    //     }catch(err){
+    //         console.log(err)
+    //         setLoading(false);
+    //         dispatch(detailsFailure())
+    //     }
+    // }
   return (
     <div id='hello' className='ml-60'>
         {/* <img className='object-fit h-80 opacity-60 w-full' src={Petrol} alt="petrol" /> */}

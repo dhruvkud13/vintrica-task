@@ -9,7 +9,8 @@ export const details=(req,res,next)=>{
         });
         console.log(newDetail);
         newDetail.save();
-        res.status(200).send("detail posted");
+
+        res.status(200).send(newDetail);
     }catch(err){
         next(createError(404, "issue while posting!"));
     }
