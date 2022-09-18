@@ -5,8 +5,8 @@ import Car from '../images/car.jpg'
 const Info = () => {
   return (
     <div>
-        <div className='flex'>
-            <div className='w-1/2 ml-60 mt-20'>
+        <div className='flex justify-center'>
+            <div className='w-1/2 ml-44 mt-12'>
                 <div className='text-[35px] font-semibold'>E-vignette: here’s how it works</div>
                 <div className='w-4/5 text-[15px]'>With vintrica it’s easy to register your number plate online for all
                     <span className='font-semibold'> motorways and main roads that require a vignette.</span> You can simply buy a 
@@ -20,7 +20,7 @@ const Info = () => {
                 </div>
             </div>
             <div className='w-1/2'>
-                <img className='mt-24 object-fit h-3/4 w-3/4 rounded-2xl' src={Car} alt="car" />
+                <img className='mt-16 object-fit h-3/4 w-3/4 rounded-2xl' src={Car} alt="car" />
             </div>
         </div>
     </div>

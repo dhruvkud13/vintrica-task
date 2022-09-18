@@ -6,13 +6,13 @@ import {GiEuropeanFlag} from 'react-icons/gi'
 
 const Navbar = () => {
   return (
-    <div className='flex py-3 justify-between bg-blue-50'>
+    <div className='flex py-3 justify-between bg-white shadow-lg'>
       <div className='flex'>
       <div className='flex'>
         <FaRoad color='orange' size={40} className='ml-2 mt-1'/>
         <div className='ml-2 text-[30px] font-bold mr-10'>VINTRICA</div>
       </div>
-      <div className='flex pt-3'>
+      <div className='flex pt-3 text-gray-400'>
         <div className='flex'>
           <AiOutlineHome size={20} color='orange'/>
           <div className='mx-3 text-orange-400'>HOMEPAGE</div>

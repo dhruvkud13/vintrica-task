@@ -3,8 +3,8 @@ import {TiTick} from 'react-icons/ti'
 
 const Tracking = () => {
   return (
-    <div>
-        <div className='ml-60'>
+    <div className='flex justify-center'>
+        <div className=''>
             <div className='mt-10 mb-5 text-[30px]'>Register e-vignette</div>
             <div>
                 <div className='flex'>
