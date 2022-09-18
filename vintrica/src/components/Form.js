@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import 'antd/dist/antd.css';
-import Petrol from '../images/station.jpg'
-import {GrSecure} from 'react-icons/gr'
 import {BiLockAlt,BiBus,BiTrain} from 'react-icons/bi'
 import {GiEuropeanFlag} from 'react-icons/gi'
 import {FaMotorcycle} from 'react-icons/fa'
@@ -12,7 +10,6 @@ import {useDispatch} from 'react-redux'
 import {detailsSuccess,detailsStart,detailsFailure} from '../redux/detailSlice'
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
-// import './Form.css';
 const { Option } = Select;
 
 
@@ -43,36 +40,9 @@ const Form = () => {
       }
     }
     };
-    // const handleSubmit=async(e)=>{
-    //   dispatch(detailsStart())
-    //     setLoading(true);
-    //     e.preventDefault();
-    //     try{
-    //         const body={country,vehicle,duration};
-    //         await fetch('http://localhost:8000/api/details',{
-    //             method:"POST",
-    //             headers:{"Content-Type":"application/json"},
-    //             body:JSON.stringify(body)
-    //         }).then((response)=>{
-    //           dispatch(detailsSuccess(response))
-    //           console.log(response.json())
-    //             // setLoading(false);
-                
-    //         }).then((data) => {
-              
-    //           setLoading(false);
-    //           console.log(data);
-    //         });
-    //         navigate("/continue")
-    //     }catch(err){
-    //         console.log(err)
-    //         setLoading(false);
-    //         dispatch(detailsFailure())
-    //     }
-    // }
   return (
     <div className='flex justify-center bg-gray-200 shadow-md'>
-    <div id='hello' className=''>
+    <div>
         {/* <img className='object-fit h-80 opacity-60 w-full' src={Petrol} alt="petrol" /> */}
         <div className='text-[35px] font-semibold pt-10'>E-vignettes at vintrica</div>
         <div className='text-[15px] mb-8'>Buy a motorway e-vignette quickly and easily at vintrica.</div>

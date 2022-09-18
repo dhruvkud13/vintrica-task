@@ -53,7 +53,7 @@ const handleSubmit = async (e) => {
         alert('Please fill all the fields')
     }
     else if(number!==confirmNo){
-        alert('Number does not match')
+        alert('Registration Number does not match')
     }
     else{
     try {
